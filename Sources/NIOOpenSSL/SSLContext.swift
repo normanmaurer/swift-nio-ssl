@@ -124,7 +124,7 @@ public final class SSLContext {
         // - SSL_MODE_AUTO_RETRY: Because OpenSSL's default behaviour on SSL_read without this flag is bad.
         //     See https://github.com/openssl/openssl/issues/6234 for more discussion on this.
         // SSL_CTX_ctrl(ctx, SSL_CTRL_MODE, SSL_MODE_RELEASE_BUFFERS | SSL_MODE_AUTO_RETRY, nil)
-        SSL_CTX_ctrl(ctx, SSL_CTRL_MODE, 0, nil)
+        SSL_CTX_ctrl(ctx, SSL_CTRL_MODE, 0 | 0, nil)
 
         var opensslOptions = Int(SSL_OP_NO_COMPRESSION)
 
